@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Counts from './counts'
 
 class App extends Component {
   constructor(props){
@@ -27,11 +28,7 @@ class App extends Component {
         {this.state.count} <br />
         <button onClick={this.click.bind(this)}>+</button>
         <button onClick={this.reset.bind(this)}>Reset</button>
-        <ul>
-          {
-            this.state.previous.map(count => <li>{count}</li>)
-          }
-        </ul>
+        <Counts previous={this.state.previous}/>
       </div>
     );
   }
